@@ -20,7 +20,7 @@ const HeroSection = () => {
               <h1 className="text-5xl sm:text-6xl font-bold">
                 <span className="block text-gray-800 dark:text-white">Hi, I'm</span>
                 <span className="block bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-                  Your Name
+                  Rishabh Verma
                 </span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300">
