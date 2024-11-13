@@ -106,15 +106,17 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-8 py-3 
-                         bg-blue-500 text-white rounded-lg
-                         hover:bg-blue-600 transform hover:scale-105
-                         transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Get in Touch
-              </Link>
+            <Link
+            to="https://wa.me/916388556612" // Replace with your actual phone number (91 is the country code for India)
+            target="_blank" // Opens the link in a new tab
+            className="inline-flex items-center justify-center px-8 py-3 
+                       bg-blue-500 text-white rounded-lg
+                       hover:bg-blue-600 transform hover:scale-105
+                       transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Get in Touch
+          </Link>
+          
               <Link
                 to="/projects"
                 className="inline-flex items-center justify-center px-8 py-3

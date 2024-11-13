@@ -8,7 +8,7 @@ export const socialLink = {
     github: "https://github.com/whorishabhverma",
     linkedin: "https://www.linkedin.com/in/rishabh-verma-2b5aa0185/",
     twitter: "https://twitter.com/yourusername",
-    instagram: "https://instagram.com/yourusername",
+    instagram: "https://www.instagram.com/iam_rishabhverma/",
     facebook: "https://www.facebook.com/profile.php?id=100014192431878",
   };
 
@@ -19,7 +19,7 @@ export const education = [
       school: "NIT Allahabad",
       location: "Prayagraj",
       description: "Core focus on advanced software development, algorithms, data structures, and computational theory with practical application",
-      achievements: ["8.0 CGPA", "Research Assistant", "Teaching Assistant for AI courses"],
+      achievements: ["8.0 CGPA", "Teaching Assistant for Mern"],
       icon: BookOpen
     },
     {
@@ -28,7 +28,7 @@ export const education = [
       school: "Dayanand Academy of Management Studies",
       location: "Kanpur",
       description: "Core focus on software development, algorithms, and data structures. Minor in Mathematics.",
-      achievements: ["Hackathon Winner"],
+      achievements: ["67%","Hackathon Winner"],
       icon: Award
     },
     {
@@ -37,7 +37,7 @@ export const education = [
       school: "MNJIC",
       location: "Kannauj, Uttar Pradesh",
       description: "Core focus on general education with a specialization in science, commerce, or arts, preparing for higher studies.",
-      achievements: ["Perfect Attendance", "Programming Competition Winner"],
+      achievements: ["85.8%","Perfect Attendance", "Programming Competition Winner"],
       icon: Building
     }
   ];  
