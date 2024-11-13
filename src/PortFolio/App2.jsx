@@ -7,6 +7,9 @@ import HeroSection from './HeroSection';
 import Footer from './Footer';
 
 const App2 = () => {
+  
+  
+  
   return (
     <Router>
       <Routes>
@@ -19,6 +22,8 @@ const App2 = () => {
       <SkillsShowcase/>
       <ProjectsShowcase/>
       <Footer/>
+      
+
 
     </Router>
 
