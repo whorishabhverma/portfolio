@@ -6,8 +6,7 @@ import {
   Facebook,
   Heart 
 } from 'lucide-react';
-import SocialLinks from './SocialLinks'
-import socialLinks from './SocialLinks';
+import {socialLink} from './SocialLinks';
 
 const Footer = () => {
   return (
@@ -21,7 +20,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex space-x-8">
             <a 
-              href={SocialLinks.github} 
+              href={socialLink.github} 
               className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 
                         transform hover:scale-110 transition-all duration-300 hover:-translate-y-1"
               aria-label="Github"
@@ -29,7 +28,7 @@ const Footer = () => {
               <Github className="w-6 h-6" />
             </a>
             <a 
-              href={SocialLinks.linkedin}
+              href={socialLink.linkedin}
               className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 
                         transform hover:scale-110 transition-all duration-300 hover:-translate-y-1"
               aria-label="LinkedIn"
@@ -37,7 +36,7 @@ const Footer = () => {
               <Linkedin className="w-6 h-6" />
             </a>
             <a 
-              href={SocialLinks.instagram}
+              href={socialLink.instagram}
               className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 
                         transform hover:scale-110 transition-all duration-300 hover:-translate-y-1"
               aria-label="Instagram"
@@ -45,7 +44,7 @@ const Footer = () => {
               <Instagram className="w-6 h-6" />
             </a>
             <a 
-              href={socialLinks.facebook} 
+              href={socialLink.facebook} 
               className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 
                         transform hover:scale-110 transition-all duration-300 hover:-translate-y-1"
               aria-label="Facebook"

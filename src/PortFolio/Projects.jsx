@@ -1,50 +1,50 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Eye, Code, Star } from 'lucide-react';
-
+import { projects } from './SocialLinks';
 const ProjectsShowcase = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
-  const projects = [
-    {
-      title: "MNNIT_IGNOU",
-      description: "A distance learning platform allowing students to manage assignments, track enrollment, and access resources, with administrative features for managing students and notifications",
-      image: "/images/mnnit.png",  // Path to image in the public folder
-      tags: ["React", "Node.js", "PostGreSQL", "ExpressJs", "TailwindCSS"],
-      github: "https://github.com/whorishabhverma/mnnit-project",
-      demo: "https://mnnit-ignou-study-center-client.vercel.app/",
-      stats: {
-        stars: 128,
-        views: 1.2,
-        forks: 34
-      }
-    },
-    {
-      title: "Bookish Baazar",
-      description: "A MERN stack-based bookstore where admins upload books, customers can read them, and users can leave reviews, with secure authentication and PDF viewing capabilities.",
-      image: "/images/book.png",  // Path to image in the public folder
-      tags: ["Nodejs", "ExpressJs", "TailwindCSS", "React", "MongoDB"],
-      github: "https://github.com/whorishabhverma/BookStore",
-      demo: "#",
-      stats: {
-        stars: 89,
-        views: 856,
-        forks: 23
-      }
-    },
-    {
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates and team collaboration features.",
-      image: "/images/task.png",  // Path to image in the public folder
-      tags: ["NodeJs", "TailwindCSS", "React", "JavaScript", "localStorage"],
-      github: "https://github.com/whorishabhverma/Task_Manager_App",
-      demo: "https://taskmate-ib46.onrender.com/",
-      stats: {
-        stars: 245,
-        views: 2.3,
-        forks: 67
-      }
-    }
-  ];
+  // const projects = [
+  //   {
+  //     title: "MNNIT_IGNOU",
+  //     description: "A distance learning platform allowing students to manage assignments, track enrollment, and access resources, with administrative features for managing students and notifications",
+  //     image: "/images/mnnit.png",  // Path to image in the public folder
+  //     tags: ["React", "Node.js", "PostGreSQL", "ExpressJs", "TailwindCSS"],
+  //     github: "https://github.com/whorishabhverma/mnnit-project",
+  //     demo: "https://mnnit-ignou-study-center-client.vercel.app/",
+  //     stats: {
+  //       stars: 128,
+  //       views: 1.2,
+  //       forks: 34
+  //     }
+  //   },
+  //   {
+  //     title: "Bookish Baazar",
+  //     description: "A MERN stack-based bookstore where admins upload books, customers can read them, and users can leave reviews, with secure authentication and PDF viewing capabilities.",
+  //     image: "/images/book.png",  // Path to image in the public folder
+  //     tags: ["Nodejs", "ExpressJs", "TailwindCSS", "React", "MongoDB"],
+  //     github: "https://github.com/whorishabhverma/BookStore",
+  //     demo: "#",
+  //     stats: {
+  //       stars: 89,
+  //       views: 856,
+  //       forks: 23
+  //     }
+  //   },
+  //   {
+  //     title: "Task Management App",
+  //     description: "Collaborative task management application with real-time updates and team collaboration features.",
+  //     image: "/images/task.png",  // Path to image in the public folder
+  //     tags: ["NodeJs", "TailwindCSS", "React", "JavaScript", "localStorage"],
+  //     github: "https://github.com/whorishabhverma/Task_Manager_App",
+  //     demo: "https://taskmate-ib46.onrender.com/",
+  //     stats: {
+  //       stars: 245,
+  //       views: 2.3,
+  //       forks: 67
+  //     }
+  //   }
+  // ];
   
 
   return (

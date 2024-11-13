@@ -1,26 +1,102 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import socialLinks from './SocialLinks';
+import {socialLink} from './SocialLinks';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const HeroSection = () => {
+  const heroSectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroSection = heroSectionRef.current;
+
+    // Animate the hero section content on scroll
+    gsap.fromTo(
+      heroSection.querySelector('.hero-content'),
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: heroSection,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    // Animate the background circles on scroll
+    gsap.fromTo(
+      heroSection.querySelectorAll('.bg-circle'),
+      { scale: 0, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: heroSection,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+
+    // Animate the letters in the name
+    const nameElement = heroSection.querySelector('.name');
+    const nameLetters = Array.from(nameElement.textContent).map((letter) => {
+      const span = document.createElement('span');
+      span.textContent = letter;
+      span.className = 'name-letter';
+      return span;
+    });
+
+    nameElement.innerHTML = '';
+    nameLetters.forEach((letter) => {
+      nameElement.appendChild(letter);
+    });
+
+    gsap.fromTo(
+      nameElement.querySelectorAll('.name-letter'),
+      { y: -100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: heroSection,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }, []);
+
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" ref={heroSectionRef}>
       {/* Background Animation Circles */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse bg-circle" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000 bg-circle" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-20 sm:py-32 relative">
+      <div className="max-w-6xl mx-auto px-4 py-20 sm:py-32 relative hero-content">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl sm:text-6xl font-bold">
                 <span className="block text-gray-800 dark:text-white">Hi, I'm</span>
-                <span className="block bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-                  Your Name
+                <span className="block bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text name">
+                 Rishabh Verma
                 </span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300">
@@ -30,20 +106,20 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-            to="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 
-                     bg-blue-500 text-white rounded-lg
-                     hover:bg-blue-600 transform hover:scale-105
-                     transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Get in Touch
-          </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-3 
+                         bg-blue-500 text-white rounded-lg
+                         hover:bg-blue-600 transform hover:scale-105
+                         transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Get in Touch
+              </Link>
               <Link
                 to="/projects"
                 className="inline-flex items-center justify-center px-8 py-3
                          bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg
-                         hover:bg-gray-200 dark:hover:bg-gray-600 transform hover:scale-105
+                         hover:bg-gray -200 dark:hover:bg-gray-600 transform hover:scale-105
                          transition-all duration-300"
               >
                 View Projects
@@ -53,21 +129,21 @@ const HeroSection = () => {
             {/* Social Links */}
             <div className="flex gap-6">
               <a 
-                href={socialLinks.github} 
+                href={socialLink.github} 
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 
                           transform hover:scale-110 transition-all duration-300"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a 
-                href={socialLinks.linkedin} 
+                href={socialLink.linkedin} 
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 
                           transform hover:scale-110 transition-all duration-300"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a 
-                href={socialLinks.twitter}
+                href={socialLink.twitter}
                 className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-500 
                           transform hover:scale-110 transition-all duration-300"
               >

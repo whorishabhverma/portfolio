@@ -11,43 +11,9 @@ import {
   Palette,
   Box
 } from 'lucide-react';
-
+import {skillCategories} from './SocialLinks'
 const SkillsShowcase = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      icon: Layout,
-      skills: [
-        { name: "React.js", level: 70 },
-        { name: "Next.js", level: 40 },
-        { name: "TypeScript", level: 90 },
-        { name: "TailwindCSS", level: 80 }
-      ],
-      color: "from-blue-400 to-blue-600"
-    },
-    {
-      title: "Backend Development",
-      icon: Server,
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "MongoDB", level: 85 },
-        { name: "PostGreSQL", level: 85 }
-      ],
-      color: "from-green-400 to-green-600"
-    },
-    {
-      title: "Tools & Platforms",
-      icon: GitBranch,
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "Docker", level: 50 },
-        { name: "AWS", level: 20 },
-        { name: "Firebase", level: 70 }
-      ],
-      color: "from-purple-400 to-purple-600"
-    }
-  ];
+  
 
   return (
     <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
